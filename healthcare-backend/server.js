@@ -6,12 +6,13 @@ const cors = require("cors");
 const app = express();
 app.use(express.json());
 
+// Configure CORS
 app.use(cors({
-  origin: "https://fifa-plum.vercel.app/", // Replace with your actual frontend URL
-  credentials: true
+    origin: "https://fifa-plum.vercel.app", // Replace with your actual frontend URL
+    credentials: true
 }));
 
-// Connect to MongoDB
+// MongoDB Connection
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
