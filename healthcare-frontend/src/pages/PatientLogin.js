@@ -15,7 +15,7 @@ const PatientLogin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/auth/patient/login", credentials);
+      await axios.post("https://swasth-eyn6.onrender.com:5000/api/auth/patient/login", credentials);
       alert("Login successful!");
       navigate(`/patient-dashboard/${credentials.patientID}`);
     } catch (error) {

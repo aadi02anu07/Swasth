@@ -9,7 +9,7 @@ const PatientDashboard = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/patients/${patientID}`)
+    axios.get(`https://swasth-eyn6.onrender.com:5000/api/patients/${patientID}`)
       .then((response) => {
         setPatient(response.data);
         setLoading(false);

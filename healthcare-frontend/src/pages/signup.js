@@ -24,7 +24,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       console.log("Submitting Data:", formData); // 🔍 Debugging log
-      await axios.post("http://localhost:5000/api/auth/signup", formData);
+      await axios.post("https://swasth-eyn6.onrender.com/api/auth/signup", formData);
       alert("Patient registered successfully!");
       navigate("/");
     } catch (error) {

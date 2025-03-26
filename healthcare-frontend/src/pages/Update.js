@@ -14,7 +14,7 @@ const Update = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`http://localhost:5000/api/auth/update/${patientID}`, formData);
+      const response = await axios.put(`https://swasth-eyn6.onrender.com/api/auth/update/${patientID}`, formData);
       setMessage("Patient data updated successfully!");
     } catch (error) {
       setMessage("Error updating patient data. Please try again.");

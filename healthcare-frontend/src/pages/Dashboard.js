@@ -22,7 +22,7 @@ const Dashboard = () => {
 
   // Fetch patient data from backend
   useEffect(() => {
-    axios.get("http://localhost:5000/api/patients/")
+    axios.get("https://swasth-eyn6.onrender.com/api/patients/")
       .then((response) => {
         setPatients(response.data);
         setLoading(false);
@@ -39,7 +39,7 @@ const Dashboard = () => {
   };
 
   const handleSaveChanges = () => {
-    axios.put(`http://localhost:5000/api/patients/update/${selectedPatient.patientID}`, selectedPatient)
+    axios.put(`https://swasth-eyn6.onrender.com/api/patients/update/${selectedPatient.patientID}`, selectedPatient)
       .then((response) => {
         alert("Patient details updated successfully!");
         setShowModal(false);
@@ -52,7 +52,7 @@ const Dashboard = () => {
 
   const handleDelete = (patientID) => {
     if (window.confirm("Are you sure you want to delete this patient?")) {
-      axios.delete(`http://localhost:5000/api/patients/delete/${patientID}`)
+      axios.delete(`https://swasth-eyn6.onrender.com/api/patients/delete/${patientID}`)
         .then(() => {
           alert("Patient deleted successfully!");
           setPatients(patients.filter(p => p.patientID !== patientID));

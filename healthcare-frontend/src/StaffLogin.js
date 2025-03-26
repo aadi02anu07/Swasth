@@ -14,7 +14,7 @@ const StaffLogin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/staff/login", credentials);
+      const response = await axios.post("https://swasth-eyn6.onrender.com/api/auth/staff/login", credentials);
       alert("Login successful!");
       navigate("/dashboard"); // Redirect to staff dashboard where all patients are shown
     } catch (error) {
