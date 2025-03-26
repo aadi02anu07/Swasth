@@ -5,7 +5,11 @@ const cors = require("cors");
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+
+app.use(cors({
+  origin: "https://fifa-plum.vercel.app/", // Replace with your actual frontend URL
+  credentials: true
+}));
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, {
@@ -17,15 +21,10 @@ mongoose.connect(process.env.MONGO_URI, {
 
 // Import Routes
 const authRoutes = require("./routes/authRoutes");
-const patientRoutes = require("./routes/patientRoutes"); // ✅ Add this line
-const cors = require("cors");
-app.use(cors({
-    origin: "https://https://fifa-plum.vercel.app/", // Replace with your actual frontend URL
-    credentials: true
-}));
+const patientRoutes = require("./routes/patientRoutes");
 
 app.use("/api/auth", authRoutes);
-app.use("/api/patients", patientRoutes); // ✅ Add this line
+app.use("/api/patients", patientRoutes);
 
 // Test API Route
 app.get("/", (req, res) => {
