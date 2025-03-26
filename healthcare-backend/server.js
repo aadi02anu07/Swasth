@@ -18,6 +18,11 @@ mongoose.connect(process.env.MONGO_URI, {
 // Import Routes
 const authRoutes = require("./routes/authRoutes");
 const patientRoutes = require("./routes/patientRoutes"); // ✅ Add this line
+const cors = require("cors");
+app.use(cors({
+    origin: "https://https://fifa-plum.vercel.app/", // Replace with your actual frontend URL
+    credentials: true
+}));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/patients", patientRoutes); // ✅ Add this line
